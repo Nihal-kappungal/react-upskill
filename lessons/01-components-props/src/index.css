@@ -1,0 +1,193 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Base HTML */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+/* 3. Body */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #202020;
+}
+
+/* 4. Images */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 5. Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 6. Lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 7. Buttons */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* 8. Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* 9. Typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* 10. Utility Classes */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.hidden {
+  display: none;
+}
+
+.card {
+    width: 280px;
+    border-radius: 20px;
+    padding: 20px;
+    background:#fff;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #dadada;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+button.primary{
+    padding: 4px 12px;
+    text-align: center;
+    font-weight:500;
+    font-size: 12px;
+    color: #fff;
+    background: none;
+    background-color: black;
+    border-radius: 8px;
+}
+button.secondary {
+    padding: 4px 8px;
+    gap: 6px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    color: #888888;
+    border: 1px solid #afaeae;
+    border-radius: 8px;
+}
+.center {
+    margin-top: 10px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+}
+.center h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+.center h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+.center h4 span {
+    margin-left: 4px;
+    font-size: 12px;
+    color: #afaeae;
+    font-weight: 400;
+}
+.center .tag {
+    display: flex;
+    gap: 6px;
+
+}
+.center .tag h5 {
+    padding: 4px 6px;
+    background: #ededed;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+.bottom {
+    border-top: 1px solid #cbcbcb;
+    padding:20px 0 ;
+    display: flex;
+    justify-content: space-between;
+}
+.price {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.price h3 {
+    font-size: 16px;
+    font-weight: 500;
+}
+.price h6 {
+    font-weight: normal;
+    font-size: 12px;
+    color: #cbcbcb;
+}
