@@ -8,7 +8,8 @@ A personal repository for learning, practicing, and improving my **React.js** sk
 
 | Date       | Topic        | What I Learned         | Project Folder      | Status    |
 | ---------- | ------------ | ---------------------- | ------------------------ | --------- |
-| 2026-09-09 | React Basics | Components, JSX, props | Basic component practice | ✅ Done    |
+| 2026-09-08 | Components & Props | Components, JSX, props | [01-components-props](lessons/01-components-props) | ✅ Done    |
+| 2026-09-09 | React Hooks | `useState` and event handling | [02-react-hooks](lessons/02-react-hooks) | 🔄 In Progress |
 | —          | —            | —                      | —                        | ⏳ Planned |
 
 ## 🗺️ Roadmap
