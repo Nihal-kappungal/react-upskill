@@ -1,8 +1,11 @@
 import React from 'react'
+import FormHandling from './components/FormHandling'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <FormHandling/>
+    </div>
   )
 }
 
