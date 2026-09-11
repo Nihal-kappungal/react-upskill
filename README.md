@@ -14,7 +14,7 @@ A personal repository for learning, practicing, and improving my **React.js** sk
 | Local Storage                              | [04-local-storage](lessons/04-local-storage)       | ✅ Done         |
 | API Calling                                | [05-api-calling](lessons/05-api-calling)           | ✅ Done         |
 | useEffect Hook                             | [06-use-effect](lessons/06-use-effect)             | ✅ Done         |
-| API Calling Image Gallery Practice Project | [07-gallery-project](lessons/07-gallery-project)   | 🔄 In Progress  |
+| Image Gallery | [07-gallery-project](lessons/07-gallery-project)   | 🔄 In Progress  |
 | —                                          | —                                                 | ⏳ Planned      |
 
 ## 🗺️ Roadmap
