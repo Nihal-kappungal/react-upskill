@@ -4,7 +4,7 @@ import Gallery from './components/Gallery'
 const App = () => {
   return (
     <>
-    <Gallery/>
+      <Gallery />
     </>
   )
 }
