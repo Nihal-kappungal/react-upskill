@@ -6,11 +6,16 @@ A personal repository for learning, practicing, and improving my **React.js** sk
 
 ## 📚 Learning Log
 
-| Date       | Topic        | What I Learned         | Project Folder      | Status    |
-| ---------- | ------------ | ---------------------- | ------------------------ | --------- |
-| 2026-09-08 | Components & Props | Components, JSX, props | [01-components-props](lessons/01-components-props) | ✅ Done    |
-| 2026-09-09 | React Hooks | `useState` and event handling | [02-react-hooks](lessons/02-react-hooks) | 🔄 In Progress |
-| —          | —            | —                      | —                        | ⏳ Planned |
+| Topic                                      | Project Folder                                      | Status          |
+| ------------------------------------------ | --------------------------------------------------- | --------------- |
+| Components & Props                         | [01-components-props](lessons/01-components-props) | ✅ Done         |
+| React Hooks (useState)                                | [02-react-hooks](lessons/02-react-hooks)            | ✅ Done  |
+| Notes App                                  | [03-notes-app](lessons/03-notes-app)               | ✅ Done         |
+| Local Storage                              | [04-local-storage](lessons/04-local-storage)       | ✅ Done         |
+| API Calling                                | [05-api-calling](lessons/05-api-calling)           | ✅ Done         |
+| useEffect Hook                             | [06-use-effect](lessons/06-use-effect)             | ✅ Done         |
+| API Calling Image Gallery Practice Project | [07-gallery-project](lessons/07-gallery-project)   | 🔄 In Progress  |
+| —                                          | —                                                 | ⏳ Planned      |
 
 ## 🗺️ Roadmap
 
