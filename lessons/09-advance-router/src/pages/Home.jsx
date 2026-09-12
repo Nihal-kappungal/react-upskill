@@ -7,7 +7,7 @@ const Home = () => {
       {Object.keys(colorMap).map((color) => (
         <div className="flex items-center justify-center flex-col gap-6">
           <MacFolder key={color} label="Documents" count={24} color={color} />
-          <span className="text-md font-mono leading-none tracking-tighter">
+          <span className="text-md font-mono leading-none tracking-tighter dark:text-white">
             {color}
           </span>
         </div>
