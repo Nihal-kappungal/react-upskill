@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import NavLinks from "./NavLinks";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   const LinkItems = [
     {
       name: "Home",
@@ -32,6 +34,12 @@ const Navbar = () => {
           <NavLinks key={idx} name={link.name} path={link.path} />
         ))}
       </nav>
+      <button
+        onClick={() => navigate(-1)}
+        className="absolute right-10 overflow-hidden rounded-full bg-black px-4 py-2 text-white before:absolute  before:inset-x-0 before:bottom-0 before:h-0 before:bg-red-700 before:transition-all before:duration-300 hover:before:h-full"
+      >
+        <span className="relative z-10">Back</span>
+      </button>
     </header>
   );
 };
