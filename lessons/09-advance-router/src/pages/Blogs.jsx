@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import BackButton from "../components/BackButton";
 
 const Blogs = () => {
   return (
@@ -21,6 +22,7 @@ const Blogs = () => {
       <div className="  bg-white  p-10 rounded-2xl">
         <Outlet />
       </div>
+      <BackButton />
     </div>
   );
 };

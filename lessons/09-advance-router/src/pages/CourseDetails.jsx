@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import BackButton from "../components/BackButton";
 
 const CourseDetails = () => {
   const courseDetails = [
@@ -52,6 +53,7 @@ const CourseDetails = () => {
           <span className="leading-none tracking-tighter">{course.name}</span>
         </div>
       ))}
+      <BackButton />
     </div>
   );
 };
