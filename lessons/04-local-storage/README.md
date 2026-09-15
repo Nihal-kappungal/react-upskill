@@ -1,16 +1,57 @@
-# React + Vite
+# Lesson 4: Local Storage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This lesson introduced me to browser storage and how data can be saved and retrieved in a React app using `localStorage`.
 
-Currently, two official plugins are available:
+## What I learned
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- how to store data in the browser using `localStorage.setItem()`
+- how to read saved data using `localStorage.getItem()`
+- how to convert JavaScript objects into strings using `JSON.stringify()`
+- how to parse stored data back into JavaScript objects using `JSON.parse()`
+- how data can persist even after refreshing the page
+- how to clear stored data with `localStorage.clear()` or `localStorage.removeItem()`
 
-## React Compiler
+## What this project demonstrates
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The app stores a sample user list in local storage and reads it back from the browser.
 
-## Expanding the ESLint configuration
+```jsx
+const userDetails = [
+  {
+    name: "James",
+    age: 23,
+    gender: "Male",
+    city: "LA",
+  },
+];
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+localStorage.setItem("user", JSON.stringify(userDetails));
+
+const user = JSON.parse(localStorage.getItem("user"));
+```
+
+This helped me understand how browser storage works for small frontend data persistence.
+
+## Why localStorage is useful
+
+It is useful for saving simple app data such as:
+
+- user preferences
+- saved notes
+- form drafts
+- toggles and settings
+
+It is not ideal for sensitive data because it is stored in the browser and can be accessed by the user.
+
+## Key takeaway
+
+`localStorage` is a simple way to persist data on the client side. It helps React apps remember information without a backend.
+
+## Skills practiced
+
+- browser storage
+- `localStorage`
+- `JSON.stringify()`
+- `JSON.parse()`
+- data persistence
+- frontend state storage
