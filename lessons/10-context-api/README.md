@@ -1,16 +1,62 @@
-# React + Vite
+# Lesson 10: Context API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This lesson introduced the React Context API, which allows data to be shared across multiple components without passing props manually at every level.
 
-Currently, two official plugins are available:
+## What I learned
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- how to create a context using `createContext()`
+- how to provide global data with a `Provider`
+- how to access shared data with `useContext()`
+- how to avoid prop drilling for app-wide values like theme
+- how to update shared state from multiple components
 
-## React Compiler
+## What this project does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This app has a simple theme toggle.
 
-## Expanding the ESLint configuration
+- the theme state is stored in a context
+- the `Navbar` reads the current theme value from context
+- the button in `App.jsx` changes the theme using the same shared state
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Main concept used
+
+```jsx
+export const ThemeDataContext = createContext();
+
+<ThemeDataContext.Provider value={[theme, setTheme]}>
+  {props.children}
+</ThemeDataContext.Provider>;
+```
+
+This shows how data can be shared from a parent provider to any component in the tree.
+
+## Example usage
+
+```jsx
+const [theme, setTheme] = useContext(ThemeDataContext);
+```
+
+Now any component can read or update the same data without passing it through props layer by layer.
+
+## Why Context API is useful
+
+It is helpful when many components need access to the same information, such as:
+
+- theme
+- user authentication
+- language selection
+- app settings
+- cart state
+
+## Key takeaway
+
+Context API helps manage global state in a cleaner way. It reduces prop drilling and makes it easier to share data between components in a React app.
+
+## Skills practiced
+
+- `createContext()`
+- `useContext()`
+- `Provider`
+- global state sharing
+- prop drilling reduction
+- React app state architecture
