@@ -1,16 +1,72 @@
-# React + Vite
+# Lesson 9: Advanced React Router
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This lesson expanded on basic routing and introduced more advanced React Router patterns such as nested routes, dynamic route parameters, and page fallback handling.
 
-Currently, two official plugins are available:
+## What I learned
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- how to create nested routes inside a parent route
+- how to use `Outlet` to render child routes inside a parent page
+- how to access URL parameters with `useParams()`
+- how to handle invalid routes with a `PageNotFound` page
+- how to use `useNavigate()` to move back or redirect programmatically
+- how to build a more realistic multi-page app structure
 
-## React Compiler
+## What this project does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The app includes multiple sections:
 
-## Expanding the ESLint configuration
+- Home
+- About
+- Contact
+- Blogs
+- Courses
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Nested routes
+
+```jsx
+<Route path="/blog" element={<Blogs />}>
+  <Route path="designer" element={<DesignerBlogs />} />
+  <Route path="developer" element={<DevelopementBlogs />} />
+</Route>
+```
+
+This allowed the blog section to have sub-pages for different content categories.
+
+### Dynamic route parameter
+
+```jsx
+<Route path="/course/:id" element={<CourseDetails />} />
+```
+
+The route includes a dynamic `id`, and the component can read it using `useParams()`.
+
+### Fallback route
+
+```jsx
+<Route path="*" element={<PageNotFound />} />
+```
+
+This handles routes that do not exist and shows a 404-style page.
+
+## Main concepts practiced
+
+- nested routing
+- dynamic parameters
+- `Outlet`
+- `useParams()`
+- `useNavigate()`
+- route fallback handling
+- programmatic navigation
+
+## Key takeaway
+
+Advanced routing helps build apps with structured sections, nested pages, and dynamic content paths. It is closer to how real websites and dashboards are organized.
+
+## Skills practiced
+
+- React Router
+- nested routes
+- route params
+- `Outlet`
+- navigation logic
+- handling missing pages
