@@ -1,16 +1,56 @@
-# React + Vite
+# Lesson 5: API Calling in React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This lesson introduced me to fetching data from an API and displaying it in a React app.
 
-Currently, two official plugins are available:
+## What I learned
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- how to call APIs using `fetch()`
+- how to call APIs using `axios`
+- how to use `async` and `await` in JavaScript
+- how to store API response data in React state
+- how to render data from an external source in the UI
+- how to work with JSON data returned by an API
 
-## React Compiler
+## What this project does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The app uses the JSONPlaceholder API to fetch user data and then shows the names on the screen.
 
-## Expanding the ESLint configuration
+### Fetch example
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```jsx
+const response = await fetch("https://jsonplaceholder.typicode.com/users");
+const data = await response.json();
+```
+
+This helped me understand that fetching data is asynchronous, so we need to wait for the response before using it.
+
+### Axios example
+
+```jsx
+const response = await axios.get("https://jsonplaceholder.typicode.com/users");
+setUser(response.data);
+```
+
+Axios makes API calls cleaner and easier to read, especially when working with data in a React app.
+
+## Main concepts practiced
+
+- asynchronous JavaScript
+- `fetch` API
+- `axios`
+- React state updates
+- displaying API data in the UI
+- mapping over arrays to render list items
+
+## Key takeaway
+
+API integration is one of the most important parts of real-world React apps. This lesson taught me how to request data from a server and show it dynamically in the interface.
+
+## Skills practiced
+
+- `async/await`
+- HTTP requests
+- JSON parsing
+- `useState`
+- API response handling
+- rendering fetched data
