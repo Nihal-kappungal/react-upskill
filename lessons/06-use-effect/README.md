@@ -1,16 +1,61 @@
-# React + Vite
+# Lesson 6: useEffect in React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This lesson focused on the `useEffect` hook and how it helps us run code after a component renders or when state changes.
 
-Currently, two official plugins are available:
+## What I learned
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- how `useEffect` works in React
+- why it is useful for side effects
+- how to run code when a component mounts
+- how to run code when specific state values change
+- how to separate effects for different values
 
-## React Compiler
+## What this project demonstrates
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The app contains examples where `useEffect` runs based on state updates.
 
-## Expanding the ESLint configuration
+### Example 1: effect depends on one state value
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```jsx
+useEffect(() => {
+  console.log("useEffect is running......");
+}, [num2]);
+```
+
+This means the effect will run whenever `num2` changes.
+
+### Example 2: separate effects for different values
+
+```jsx
+useEffect(() => {
+  ChangeA();
+}, [a]);
+
+useEffect(() => {
+  ChangeB();
+}, [b]);
+```
+
+This showed how each effect can respond to its own dependency, making logic more organized.
+
+## Why useEffect is important
+
+`useEffect` is used for tasks such as:
+
+- fetching data
+- updating the document title
+- listening for events
+- running logic after render
+- syncing state with side effects
+
+## Key takeaway
+
+`useEffect` is React's way of handling side effects. It lets us react to state changes and lifecycle moments in a clean and predictable way.
+
+## Skills practiced
+
+- `useEffect`
+- side effects
+- dependency arrays
+- state-based reactivity
+- lifecycle thinking in React
