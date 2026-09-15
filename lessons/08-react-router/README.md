@@ -1,16 +1,54 @@
-# React + Vite
+# Lesson 8: React Router Basics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This lesson introduced me to React Router, which is used to create multiple pages in a React app without reloading the browser.
 
-Currently, two official plugins are available:
+## What I learned
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- how to set up routes in a React application
+- how to create different pages for different URLs
+- how to navigate between pages using `Link`
+- how `Routes` and `Route` work together
+- how to organize pages in a small app structure
 
-## React Compiler
+## What this project does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The app has a simple navigation bar with links to:
 
-## Expanding the ESLint configuration
+- Home
+- About
+- Blogs
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Each link loads a different page based on the route.
+
+### Example
+
+```jsx
+<Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/about" element={<About />} />
+  <Route path="/blog" element={<Blogs />} />
+</Routes>
+```
+
+This showed me how React apps can behave like multi-page websites while still using components.
+
+## Main concepts practiced
+
+- `BrowserRouter` setup
+- `Routes`
+- `Route`
+- `Link`
+- page-based navigation
+- component structure for pages
+
+## Key takeaway
+
+React Router allows a single-page application to feel like a multi-page app by changing the URL and rendering the correct component for each route.
+
+## Skills practiced
+
+- routing
+- page navigation
+- React Router
+- component-based page design
+- SPA structure
