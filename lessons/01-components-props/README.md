@@ -1,16 +1,46 @@
-# React + Vite
+# Lesson 1: Components and Props
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In this lesson, I learned the basics of building a React app using reusable components and passing data with props.
 
-Currently, two official plugins are available:
+## What I built
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project renders a list of job cards for different companies. Each card is created from a reusable `Card` component and data is passed into it dynamically using props.
 
-## React Compiler
+## What I learned
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- How to create and use React components
+- How to split UI into smaller reusable pieces
+- How props are used to pass data from a parent component to a child component
+- How to render lists using `map()` in JSX
+- How to use `key` while rendering repeated items
+- How to keep code cleaner and more maintainable by reusing components
+- How JavaScript data structures can be used to generate UI
 
-## Expanding the ESLint configuration
+## Project structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `App.jsx` contains the job data and maps it into cards
+- `components/Card.jsx` defines the reusable card UI
+- Each card receives props like company name, salary, role, location, and job type
+
+## Example concept used
+
+```jsx
+jobs.map((item) => (
+  <Card key={item.id} company={item.company} salary={item.salary} />
+));
+```
+
+This taught me that React components can be reused with different data instead of writing the same markup again and again.
+
+## Key takeaway
+
+I learned that components are the building blocks of React, and props are the way to pass information into those components to create dynamic, scalable interfaces.
+
+## Skills practiced
+
+- JSX
+- Functional components
+- Props
+- Array mapping
+- Reusable UI design
+- Data-driven rendering
