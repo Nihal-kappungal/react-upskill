@@ -8,6 +8,8 @@ const From = () => {
     password: "",
   });
 
+  const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -18,9 +20,25 @@ const From = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("submitted");
+    console.log("submit clicked");
     const result = registerSchema.safeParse(formData);
-    console.log(result);
+    // console.log(result);
+
+    if (!result.success) {
+      const fieldErrors = {};
+      result.error.issues.forEach((issue) => {
+        const fieldName = issue.path[0];
+        fieldErrors[fieldName] = issue.message;
+      });
+
+      setErrors(fieldErrors);
+
+      return;
+    }
+
+    setErrors({});
+    console.log("form is vaild");
+    console.log(result.data);
 
     setFormData({
       name: "",
@@ -44,6 +62,7 @@ const From = () => {
           placeholder="Enter name"
           className="border border-blue-500 rounded-lg px-4 py-3 bg-white  w-full"
         />
+        {errors.name && <p>{errors.name}</p>}
         <input
           name="email"
           value={formData.email}
@@ -52,6 +71,7 @@ const From = () => {
           placeholder="john@example.com"
           className="border border-blue-500 rounded-lg px-4 py-3 bg-white  w-full"
         />
+        {errors.email && <p>{errors.email}</p>}
         <input
           name="password"
           value={formData.password}
@@ -60,7 +80,7 @@ const From = () => {
           placeholder="password"
           className="border border-blue-500 rounded-lg px-4 py-3 bg-white  w-full"
         />
-
+        {errors.password && <p>{errors.password}</p>}
         <button className="w-full bg-blue-500 p-3 rounded-full text-white text-sm font-semibold">
           Submit
         </button>
