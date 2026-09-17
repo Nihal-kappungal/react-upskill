@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { z } from "zod";
 
 const From = () => {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -9,9 +9,8 @@ const From = () => {
     e.preventDefault();
 
     console.log("submitted");
-    console.log(name, email, password);
+    console.log(email, password);
 
-    setName("");
     setEmail("");
     setPassword("");
   };
@@ -23,13 +22,6 @@ const From = () => {
         }}
         className="flex flex-col items-center justify-center gap-3 bg-white p-10 rounded-2xl"
       >
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-          placeholder="Enter your name"
-          className="border border-blue-500 rounded-lg px-4 py-3 bg-white  w-full"
-        />
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
