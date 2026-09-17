@@ -6,6 +6,7 @@ const From = () => {
     name: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -81,6 +82,16 @@ const From = () => {
           className="border border-blue-500 rounded-lg px-4 py-3 bg-white  w-full"
         />
         {errors.password && <p>{errors.password}</p>}
+        <input
+          name="confirmPassword"
+          value={formData.confirmPassword}
+          onChange={handleChange}
+          type="password"
+          placeholder="confirm password"
+          className="border border-blue-500 rounded-lg px-4 py-3 bg-white  w-full"
+        />
+
+        {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
         <button className="w-full bg-blue-500 p-3 rounded-full text-white text-sm font-semibold">
           Submit
         </button>
