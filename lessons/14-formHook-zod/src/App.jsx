@@ -1,7 +1,12 @@
 import React from "react";
+import Form from "./Components/Form";
 
 const App = () => {
-  return <div className="w-full min-h-screen bg-sky-400">App</div>;
+  return (
+    <div className="w-full min-h-screen">
+      <Form />
+    </div>
+  );
 };
 
 export default App;
