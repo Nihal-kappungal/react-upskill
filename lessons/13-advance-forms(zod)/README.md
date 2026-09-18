@@ -1,16 +1,63 @@
-# React + Vite
+# Lesson 13: Advanced Forms with Zod
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This lesson focused on validating form data more professionally using Zod, a schema validation library.
 
-Currently, two official plugins are available:
+## What I learned
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- how to define a validation schema for form fields
+- how to validate required fields and minimum length rules
+- how to validate email format
+- how to compare two fields like password and confirm password
+- how to show validation errors in the UI
+- how to stop form submission when validation fails
 
-## React Compiler
+## What this project does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The app has a registration form with:
 
-## Expanding the ESLint configuration
+- name
+- email
+- password
+- confirm password
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Before submitting, the data is validated using a schema.
+
+### Validation schema
+
+```jsx
+export const registerSchema = z
+  .object({
+    name: z.string().min(2, "Name must be at least 2 characters"),
+    email: z.email("Enter a valid email"),
+    password: z.string().min(8, "Password must be at least 8 characters"),
+    confirmPassword: z.string(),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Password does not match",
+    path: ["confirmPassword"],
+  });
+```
+
+This enforces proper form input and confirms password matching.
+
+## Main concepts practiced
+
+- Zod schema validation
+- `safeParse()`
+- field-level error messages
+- controlled form inputs
+- validation on submit
+- form error handling
+
+## Key takeaway
+
+Using a validation library like Zod makes forms more reliable. It keeps validation logic clean, reusable, and easier to manage than writing complex checks manually.
+
+## Skills practiced
+
+- React forms
+- Zod
+- schema validation
+- field validation
+- input error handling
+- password confirmation
