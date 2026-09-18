@@ -6,6 +6,7 @@ const Form = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(registerSchema),
@@ -15,6 +16,7 @@ const Form = () => {
   const onSubmit = (data) => {
     console.log("Vaild data : ", data);
     console.log("clicked");
+    reset();
   };
 
   return (
