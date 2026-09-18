@@ -1,16 +1,78 @@
-# React + Vite
+# Lesson 14: React Hook Form + Zod
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This lesson taught me how to build cleaner and more powerful forms using `react-hook-form` together with `Zod` validation.
 
-Currently, two official plugins are available:
+## What I learned
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- how to manage form state with `useForm()`
+- how to register inputs with `register()`
+- how to validate form data using `zodResolver`
+- how to handle form submission with `handleSubmit()`
+- how to show validation errors from the form state
+- how to reset the form after successful submission
 
-## React Compiler
+## What this project does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The app contains a registration form with:
 
-## Expanding the ESLint configuration
+- name
+- email
+- password
+- confirm password
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The form uses a Zod schema to validate all fields before allowing submission.
+
+### Example setup
+
+```jsx
+const {
+  register,
+  handleSubmit,
+  reset,
+  formState: { errors },
+} = useForm({
+  resolver: zodResolver(registerSchema),
+  mode: "onBlur",
+});
+```
+
+This makes validation easier and reduces manual form logic.
+
+### Zod schema
+
+```jsx
+export const registerSchema = z
+  .object({
+    name: z.string().min(4, "Name need atleast one character"),
+    email: z.email("enter valid email"),
+    password: z
+      .string()
+      .min(8, "password must be 8 character")
+      .regex(/[A-Z]/, "Password must contain an uppercase")
+      .regex(/[^A-Za-z0-9]/, "Password must contain a special character"),
+    confirmPassword: z.string(),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Password doesn't match",
+    path: ["confirmPassword"],
+  });
+```
+
+This combines multiple validation rules in one clean schema.
+
+## Why this is better
+
+`react-hook-form` reduces the amount of manual state handling in forms, and Zod makes validation predictable and reusable.
+
+## Key takeaway
+
+This lesson showed me that real-world form validation is much easier and cleaner when using a form library with a schema validator.
+
+## Skills practiced
+
+- `react-hook-form`
+- `zodResolver`
+- form validation
+- controlled form state
+- error handling
+- schema-based validation
