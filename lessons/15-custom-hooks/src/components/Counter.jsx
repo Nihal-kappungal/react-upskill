@@ -1,6 +1,8 @@
 import useCounter from "../hooks/useCounter";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 const Counter = () => {
+  useDocumentTitle("Counter App");
   const { count, increment, decrement } = useCounter();
   return (
     <section className="w-full min-h-screen bg-green-400 flex items-center justify-center flex-col gap-10">
