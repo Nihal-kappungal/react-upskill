@@ -1,16 +1,75 @@
-# React + Vite
+# Lesson 15: Custom Hooks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This lesson taught me how to extract reusable logic into custom hooks, making React components cleaner and easier to maintain.
 
-Currently, two official plugins are available:
+## What I learned
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- how to create a custom hook in React
+- how to reuse logic across multiple components
+- how to separate UI from behavior
+- how custom hooks can handle state and side effects
+- how to write small reusable utilities for common patterns
 
-## React Compiler
+## What this project does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project contains multiple custom hooks for different use cases:
 
-## Expanding the ESLint configuration
+1. `useCounter` for counter logic
+2. `useDocumentTitle` for updating the page title
+3. `useLocalStorage` for storing values in browser storage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Custom counter hook
+
+```jsx
+function useCounter() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => setCount((prev) => prev + 1);
+  const decrement = () => setCount((prev) => prev - 1);
+
+  return { count, increment, decrement };
+}
+```
+
+This keeps the counter logic out of the component and makes the component easier to read.
+
+### Custom document title hook
+
+```jsx
+function useDocumentTitle(title) {
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+}
+```
+
+This lets a component update the browser tab title without mixing it into component UI logic.
+
+### Custom localStorage hook
+
+```jsx
+function useLocalStorage(key, initialValue) {
+  const [value, setValue] = useState(initialValue);
+
+  useEffect(() => {
+    localStorage.setItem(key, value);
+  }, [key, value]);
+
+  return [value, setValue];
+}
+```
+
+This is a reusable pattern for persisting data in the browser.
+
+## Key takeaway
+
+Custom hooks are a great way to extract reusable behavior and keep components focused on presentation. They help make code cleaner, more modular, and easier to reuse in future projects.
+
+## Skills practiced
+
+- custom hooks
+- reusable logic
+- `useState`
+- `useEffect`
+- localStorage integration
+- cleaner component architecture
