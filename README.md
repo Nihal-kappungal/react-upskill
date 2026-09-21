@@ -22,6 +22,7 @@ A personal repository for learning, practicing, and improving my **React.js** sk
 | 12  | Zustand                 | [12-zustand](lessons/12-zustand)                                                             | ✅ Completed |
 | 13  | Advanced Forms with Zod | [13-advance-forms(zod)](<lessons/13-advance-forms(zod)>)                                     | ✅ Completed |
 | 14  | React Hook Form + Zod   | [14-hookForm-zod](lessons/14-hookForm-zod)                                                   | ✅ Completed |
+| 15  | Custom Hooks             | [15-custom-hooks](lessons/15-custom-hooks)                                                   | ✅ Completed |
 
 ## 🧩 What I Covered
 
@@ -39,6 +40,7 @@ A personal repository for learning, practicing, and improving my **React.js** sk
 - Global state management with Zustand
 - Form validation with Zod
 - Form handling with React Hook Form and Zod resolver
+- Reusable logic with custom hooks
 
 ## 🗺️ Roadmap
 
@@ -52,8 +54,8 @@ A personal repository for learning, practicing, and improving my **React.js** sk
 - [x] API Integration
 - [x] Global State Management
 - [x] Form Validation
+- [x] Custom Hooks
 - [ ] Performance Optimization
-- [ ] Custom Hooks
 - [ ] Testing
 - [ ] Advanced Patterns
 - [ ] Build & Deploy Projects
